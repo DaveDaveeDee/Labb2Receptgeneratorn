@@ -1,1 +1,1 @@
-# Labb-2-Receptgeneratorn-
+# Labb2Receptgeneratorn
