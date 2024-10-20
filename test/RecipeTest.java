@@ -2,8 +2,8 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RecipeTest {
 
-    void testTitle(){
-
+    void testSetTitle(String title) {
+        assertEquals(title, title);
     }
 
 }
