@@ -2,7 +2,8 @@ public class Main {
     public static void main (String[]args){
         System.out.println("""
                 
-                                                             Recipe book of the 
+                                                             Recipe book of 
+                                                                   the 
                                                                                                                        \s
                  (  (              )            )                   (                   (     (                        \s
                  )\\))(   ' (    ( /(         ( /(     (             )\\       )     (    )\\    )\\ )   (                 \s
