@@ -12,8 +12,9 @@ public class RecipeManager {
         this.recipes.add(recipe);
     }
 
-    public void removeRecipe(Recipe recipe) {
-        this.recipes.remove(recipe); // recipes.removeIf(recipe -> recipe.getTitle().equalsIgnoreCase(title));
+    public void removeRecipe(String title) {
+       // this.recipes.remove(title); // recipes.removeIf(recipe -> recipe.getTitle().equalsIgnoreCase(title));
+         recipes.removeIf(recipe -> recipe.getTitle().equalsIgnoreCase(title));
     }
 
     public void displayRecipes() {

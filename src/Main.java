@@ -17,10 +17,7 @@ public class Main {
                   \\_/\\_/   |_|  \\__|  \\__|  |_||_| \\___|  /__/     \\___| \\__,_|  \\_,_| |_|  \\__,_|  |_|   \\___/ |_||_| \s
                                                                                                                      \s              
                 """);
-            RecipeManager recipeManager = new RecipeManager();
-            Scanner sc = new Scanner(System.in);
-            String choice;
-            //choice = sc.nextLine();
+
 
             Meny.menuChoice();
 
