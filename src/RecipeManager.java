@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeManager {
-    private List<Recipe> recipes;
+    private List<Recipe> recipes; // ArrayList?
 
     public RecipeManager() {
        this.recipes = new ArrayList<Recipe>(); // Recipes?

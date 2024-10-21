@@ -1,9 +1,12 @@
+import java.util.Scanner;
+
 public class Main {
     public static void main (String[]args){
         System.out.println("""
-                
-                                                             Recipe book of 
-                                                                   the 
+                                                           
+                                                              You opened
+                                                             
+                                                           Recipe book of the 
                                                                                                                        \s
                  (  (              )            )                   (                   (     (                        \s
                  )\\))(   ' (    ( /(         ( /(     (             )\\       )     (    )\\    )\\ )   (                 \s
@@ -12,10 +15,18 @@ public class Main {
                 \\ \\((_)/ / (_) | |_    ((_) | |(_) (_))   ((_)   ((/ __| ((_)_  (_))(  | |    _| |   ((_)  ((_)  _(_/( \s
                  \\ \\/\\/ /  | | |  _|  / _|  | ' \\  / -_)  (_-<    | (__  / _` | | || | | |  / _` |  | '_| / _ \\ | ' \\))\s
                   \\_/\\_/   |_|  \\__|  \\__|  |_||_| \\___|  /__/     \\___| \\__,_|  \\_,_| |_|  \\__,_|  |_|   \\___/ |_||_| \s
-                                                                                                                     \s
-                                        
-                                        
+                                                                                                                     \s              
                 """);
+            RecipeManager recipeManager = new RecipeManager();
+            Scanner sc = new Scanner(System.in);
+            String choice;
+            //choice = sc.nextLine();
+
+            Meny.menuChoice();
+
+
+
+
 
 
     }

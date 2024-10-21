@@ -1,11 +1,12 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Recipe {
     private String title;
-    private ArrayList<Ingredient> ingredients; // skiljer sig från Poe 2.0
+    private List<Ingredient> ingredients; // skiljer sig från Poe 2.0
     private String instructions;
 
-    public Recipe(String title, ArrayList<Ingredient> ingredients, String instructions) {
+    public Recipe(String title, List<Ingredient> ingredients, String instructions) {
         this.title = title;
         this.ingredients = ingredients; // to prevent nullpointerException // this.ingredients = ingredients != null ? ingredients : new ArrayList<>();
         this.instructions = instructions;
@@ -15,7 +16,7 @@ public class Recipe {
         return title;
     }
 
-    public ArrayList<Ingredient> getIngredients() {
+    public List<Ingredient> getIngredients() {
         return ingredients;
     }
 
