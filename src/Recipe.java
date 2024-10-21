@@ -5,11 +5,13 @@ public class Recipe {
     private String title;
     private List<Ingredient> ingredients; // skiljer sig från Poe 2.0
     private String instructions;
+    private Category category;
 
-    public Recipe(String title, List<Ingredient> ingredients, String instructions) {
+    public Recipe(String title, List<Ingredient> ingredients, String instructions, Category category) {
         this.title = title;
         this.ingredients = ingredients; // to prevent nullpointerException // this.ingredients = ingredients != null ? ingredients : new ArrayList<>();
         this.instructions = instructions;
+        this.category = category;
     }
 
     public String getTitle() {
@@ -24,12 +26,19 @@ public class Recipe {
         return instructions;
     }
 
+    public Category getCategory() {
+        return category;
+    }
+
     public void addIngredient(Ingredient ingredient) {
         this.ingredients.add(ingredient);
     }
 
     @Override
     public String toString() {
-        return "Title: " + title + "\nIngredients: " + ingredients + "\nInstructions: " + instructions;
+        return "Title: " + title + "\nCategory: " + category +
+                "\nIngredients: " + ingredients + "\nInstructions: " + instructions;
     }
+
+
 }

@@ -15,38 +15,44 @@ public class Meny {
                     "\n1. Add recipe." +
                     "\n2. View recipe." +
                     "\n3. Remove recipe." +
+                    "\n4. Save recipe to file." +
                     "\n0. Exit Program.");
-            System.out.print("Ange siffran för menyval > \n");
+            System.out.print("Ange siffran för menyval > ");
 
             int choice = sc.nextInt();
             sc.nextLine();
+            System.out.println();
 
             switch (choice) {
                 case 1:
-                    System.out.println("Enter recipe title: ");
+                    System.out.print("Enter recipe title > ");
                     String title = sc.nextLine();
 
                     List<Ingredient> ingredients = new ArrayList<>();
                     String addMore;
                     do {
-                        System.out.print("Enter ingredient name: ");
+                        System.out.print("Enter ingredient name > ");
                         String ingredientName = sc.nextLine();
-                        System.out.print("Enter ingredient quantity: ");
+                        System.out.print("Enter ingredient quantity > ");
                         String ingredientQuantity = sc.nextLine();
                         ingredients.add(new Ingredient(ingredientName, ingredientQuantity)); // calls the constructor
 
                         System.out.print("Add more ingredients? (yes/no): ");
                         addMore = sc.nextLine();
                         while ((!(addMore.equalsIgnoreCase("yes") || addMore.equalsIgnoreCase("no")))) {
-                            System.out.println("Enter yes/no");
+                            System.out.print("Enter yes/no > ");
                             addMore = sc.nextLine();
                         }
                     } while (addMore.equalsIgnoreCase("yes"));
 
-                    System.out.println("Enter instructions: ");
+                    System.out.print("Enter instructions > ");
                     String instructions = sc.nextLine();
 
-                    Recipe newRecipe = new Recipe(title, ingredients, instructions);
+                    System.out.print("Enter category > ");
+                    String categoryName = sc.nextLine();
+                    Category category = new Category(categoryName);
+
+                    Recipe newRecipe = new Recipe(title, ingredients, instructions, category);
                     recipeManager.addRecipe(newRecipe);
                     System.out.println("Recipe added!\n");
                     break;
@@ -56,11 +62,14 @@ public class Meny {
                     break;
 
                 case 3:
-                    System.out.print("Enter recipe title to remove: ");
+                    System.out.print("Enter recipe title to remove > ");
                     String removeTitle = sc.nextLine();
                     recipeManager.removeRecipe(removeTitle);
-                    System.out.println("Recipe removed (if it existed).\n");
                     break;
+
+                case 4:
+                    // save recipe to file
+
 
                 case 0:
                     System.out.println("Exits Recipe...\n"); // här borde komma, do you really want to quit?

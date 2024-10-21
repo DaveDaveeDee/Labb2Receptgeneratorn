@@ -13,8 +13,12 @@ public class RecipeManager {
     }
 
     public void removeRecipe(String title) {
-       // this.recipes.remove(title); // recipes.removeIf(recipe -> recipe.getTitle().equalsIgnoreCase(title));
-         recipes.removeIf(recipe -> recipe.getTitle().equalsIgnoreCase(title));
+        boolean removed = recipes.removeIf(recipe -> recipe.getTitle().equalsIgnoreCase(title));
+        if (removed) {
+            System.out.println("Recipe removed successfully.");
+        } else {
+            System.out.println("No recipe found with that title.");
+        }
     }
 
     public void displayRecipes() {
@@ -22,6 +26,7 @@ public class RecipeManager {
             System.out.println("no recipes available.");
             return;
         }
+
         for (Recipe recipe : recipes) {
             System.out.println(recipe);
             System.out.println();
