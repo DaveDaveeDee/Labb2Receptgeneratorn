@@ -16,6 +16,7 @@ public class Meny {
                     "\n2. View recipe." +
                     "\n3. Remove recipe." +
                     "\n4. Save recipe to file." +
+                    "\n5. Load recipe from file." +
                     "\n0. Close cooking book.");
             System.out.print("Enter number for choice > ");
 
@@ -82,13 +83,20 @@ public class Meny {
                     break;
 
                 case 4:
-                    // save recipe to file
-                    System.out.println("Save recipe to file.\n");
-//                    System.out.print("Enter filename to save recipes (e.g., recipes.txt): ");
-  //                  String fileName = sc.nextLine();
+                /*    System.out.println("Save recipe to file.\n");
                     recipeManager.saveRecipesToFile("Recipes of the Witches Cauldron");
-                    System.out.println("Done");
+*/
+                System.out.print("Enter filename to save recipes (e.g., recipes.txt): ");
+                String fileNameToSave = sc.nextLine();
+                recipeManager.saveRecipesToFile(fileNameToSave);
+                    break;
 
+
+                case 5:
+                    // read recipe from file
+                    System.out.print("Enter filename to load recipes (e.g., recipes.txt): ");
+                    String fileNameToLoad = sc.nextLine();
+                    recipeManager.loadRecipesFromFile(fileNameToLoad);
                     break;
 
                 case 0:
