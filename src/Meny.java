@@ -83,20 +83,16 @@ public class Meny {
                     break;
 
                 case 4:
-                /*    System.out.println("Save recipe to file.\n");
-                    recipeManager.saveRecipesToFile("Recipes of the Witches Cauldron");
-*/
-                System.out.print("Enter filename to save recipes (e.g., recipes.txt): ");
-                String fileNameToSave = sc.nextLine();
-                recipeManager.saveRecipesToFile(fileNameToSave);
+                    System.out.print("Enter filename to save recipes (e.g., recipes.txt): ");
+                    String fileNameToSave = sc.nextLine();
+                    recipeManager.saveRecipesToFile(fileNameToSave);
                     break;
 
 
                 case 5:
-                    // read recipe from file
                     System.out.print("Enter filename to load recipes (e.g., recipes.txt): ");
                     String fileNameToLoad = sc.nextLine();
-                    recipeManager.loadRecipesFromFile(fileNameToLoad);
+                    recipeManager.loadFromFile(fileNameToLoad);
                     break;
 
                 case 0:
