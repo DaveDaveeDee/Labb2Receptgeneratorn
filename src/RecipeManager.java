@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+
 
 public class RecipeManager {
     private List<Recipe> recipes; // ArrayList?
@@ -32,4 +36,16 @@ public class RecipeManager {
             System.out.println();
         }
     }
+
+    public void saveRecipesToFile(String fileName) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("Recipes of the Witches Cauldron"));) {
+            for (Recipe recipe : recipes) {
+                writer.println(recipe);
+                writer.println();
+            }
+            System.out.println("Recipes saved to " + "Recipes of the Witches Cauldron");
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
+        }
 }

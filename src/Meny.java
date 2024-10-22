@@ -17,7 +17,7 @@ public class Meny {
                     "\n3. Remove recipe." +
                     "\n4. Save recipe to file." +
                     "\n0. Close cooking book.");
-            System.out.print("Ange siffran för menyval > ");
+            System.out.print("Enter number for choice > ");
 
             int choice = sc.nextInt();
             sc.nextLine();
@@ -83,7 +83,13 @@ public class Meny {
 
                 case 4:
                     // save recipe to file
+                    System.out.println("Save recipe to file.\n");
+//                    System.out.print("Enter filename to save recipes (e.g., recipes.txt): ");
+  //                  String fileName = sc.nextLine();
+                    recipeManager.saveRecipesToFile("Recipes of the Witches Cauldron");
+                    System.out.println("Done");
 
+                    break;
 
                 case 0:
                     System.out.println("The book is now closing up...\n"); // här borde komma, do you really want to quit?
