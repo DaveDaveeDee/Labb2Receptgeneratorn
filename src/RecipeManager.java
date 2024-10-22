@@ -14,6 +14,10 @@ public class RecipeManager {
        this.recipes = new ArrayList<Recipe>();
     }
 
+    public List<Recipe> getRecipes() {
+        return recipes;
+    }
+
     public void addRecipe(Recipe recipe) {
         this.recipes.add(recipe);
         System.out.println("Recipe added: " + recipe.getTitle()); // Debugging line

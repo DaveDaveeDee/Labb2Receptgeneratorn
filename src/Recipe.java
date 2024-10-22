@@ -34,21 +34,11 @@ public class Recipe {
         this.ingredients.add(ingredient);
     }
 
-/*    @Override
+    @Override
     public String toString() {
         return  "Title: " + title +
                 "\nCategory: " + category +
                 "\nIngredients: " + ingredients +
                 "\nInstructions: " + instructions;
-    }*/
-
-    @Override
-    public String toString() {
-        return "Recipe{" +
-                "title='" + title + '\'' +
-                ", ingredients=" + ingredients +
-                ", instructions='" + instructions + '\'' +
-                ", category=" + category +
-                '}';
     }
 }

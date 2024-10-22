@@ -83,20 +83,19 @@ public class Meny {
                     break;
 
                 case 4:
-                    System.out.print("Enter filename to save recipes (e.g., recipes.txt): ");
+                    System.out.print("Enter filename to save recipes (e.g., recipes.txt) > ");
                     String fileNameToSave = sc.nextLine();
                     recipeManager.saveRecipesToFile(fileNameToSave);
                     break;
 
-
                 case 5:
-                    System.out.print("Enter filename to load recipes (e.g., recipes.txt): ");
+                    System.out.print("Enter filename to load recipes (e.g., recipes.txt) > ");
                     String fileNameToLoad = sc.nextLine();
                     recipeManager.loadFromFile(fileNameToLoad);
                     break;
 
                 case 0:
-                    System.out.println("The book is now closing up...\n"); // här borde komma, do you really want to quit?
+                    System.out.println("You are closing the book...\n"); // här borde komma, do you really want to quit?
                     inMenu = false;
                     break;
                 default:
