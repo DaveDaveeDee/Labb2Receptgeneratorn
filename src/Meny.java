@@ -16,7 +16,7 @@ public class Meny {
                     "\n2. View recipe." +
                     "\n3. Remove recipe." +
                     "\n4. Save recipe to file." +
-                    "\n0. Exit Program.");
+                    "\n0. Close cooking book.");
             System.out.print("Ange siffran för menyval > ");
 
             int choice = sc.nextInt();
@@ -37,7 +37,7 @@ public class Meny {
                         String ingredientQuantity = sc.nextLine();
                         ingredients.add(new Ingredient(ingredientName, ingredientQuantity)); // calls the constructor
 
-                        System.out.print("Add more ingredients? (yes/no): ");
+                        System.out.print("Add more ingredients? (yes/no) > ");
                         addMore = sc.nextLine();
                         while ((!(addMore.equalsIgnoreCase("yes") || addMore.equalsIgnoreCase("no")))) {
                             System.out.print("Enter yes/no > ");
@@ -48,9 +48,23 @@ public class Meny {
                     System.out.print("Enter instructions > ");
                     String instructions = sc.nextLine();
 
+/*
                     System.out.print("Enter category > ");
                     String categoryName = sc.nextLine();
                     Category category = new Category(categoryName);
+*/
+
+                    // Display category options
+                    System.out.println("Enter a number for this meals category: ");
+                    for (CategoryType category : CategoryType.values()) {
+                        System.out.println(category.ordinal() + 1 + ". " + category.getDisplayName());
+                    }
+                    System.out.print("> ");
+                    // Get user choice
+                    int categoryChoice = sc.nextInt();
+                    sc.nextLine(); // Clear the newline character
+                    CategoryType selectedCategory = CategoryType.values()[categoryChoice - 1];
+                    Category category = new Category(selectedCategory.getDisplayName());
 
                     Recipe newRecipe = new Recipe(title, ingredients, instructions, category);
                     recipeManager.addRecipe(newRecipe);
@@ -72,7 +86,7 @@ public class Meny {
 
 
                 case 0:
-                    System.out.println("Exits Recipe...\n"); // här borde komma, do you really want to quit?
+                    System.out.println("The book is now closing up...\n"); // här borde komma, do you really want to quit?
                     inMenu = false;
                     break;
                 default:

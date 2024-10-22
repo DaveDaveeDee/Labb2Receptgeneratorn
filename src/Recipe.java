@@ -36,8 +36,10 @@ public class Recipe {
 
     @Override
     public String toString() {
-        return "Title: " + title + "\nCategory: " + category +
-                "\nIngredients: " + ingredients + "\nInstructions: " + instructions;
+        return  "Title: " + title +
+                "\nCategory: " + category +
+                "\nIngredients: " + ingredients +
+                "\nInstructions: " + instructions;
     }
 
 
