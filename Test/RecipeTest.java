@@ -17,8 +17,7 @@ public class RecipeTest {
         assertEquals(1, recipe.getIngredients().size());
         assertEquals("Slice and cook.", recipe.getInstructions());
         assertEquals("Breakfast", recipe.getCategory().getName());
-
-       // String
+        assertEquals("Christmas Ham, Breakfast, Slice and cook.", recipe.getIngredients().getToString());
     }
 
 /*    @Test
