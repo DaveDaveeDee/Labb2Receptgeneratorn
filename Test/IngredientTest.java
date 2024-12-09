@@ -9,11 +9,6 @@ public class IngredientTest {
         Ingredient ingredient = new Ingredient("Honey", "1spoon");
         assertEquals("Honey", ingredient.getName());
         assertEquals("1spoon", ingredient.getQuantity());
-    }
-
-    @Test
-    void testIngredientToString() {
-        Ingredient ingredient = new Ingredient("Flour", "400g");
-        assertEquals("400g Flour", ingredient.toString());
+        assertEquals("1spoon Honey", ingredient.toString());
     }
 }
