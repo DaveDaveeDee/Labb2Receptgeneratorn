@@ -11,5 +11,9 @@ public class IngredientTest {
         assertEquals("1spoon", ingredient.getQuantity());
     }
 
-
+    @Test
+    void testIngredientToString() {
+        Ingredient ingredient = new Ingredient("Flour", "400g");
+        assertEquals("400g Flour", ingredient.toString());
+    }
 }
