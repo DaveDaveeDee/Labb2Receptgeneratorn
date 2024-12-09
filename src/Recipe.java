@@ -1,6 +1,12 @@
 import java.util.List;
 
 public class Recipe {
-    public Recipe(String christmasHam, List<Ingredient> ingredients, String s, Category breakfast) {
+    private String title;
+    private List<Ingredient> ingredients;
+    private String instructions;
+    private Category category;
+
+    public Recipe(String title, List<Ingredient> ingredients, String instructions, Category category) {
+
     }
 }
