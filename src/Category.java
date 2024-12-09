@@ -1,4 +1,11 @@
 public class Category {
-    public Category(String breakfast) {
+    private String name;
+
+    public Category(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
     }
 }
