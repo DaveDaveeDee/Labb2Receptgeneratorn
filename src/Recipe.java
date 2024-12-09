@@ -28,4 +28,21 @@ public class Recipe {
     public Category getCategory() {
         return category;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Title: ").append(title).append("\n");
+        sb.append("category: ").append(category.getName()).append("\n");
+        sb.append("Instructions: ").append(instructions).append("\n");
+        sb.append("Ingredients: ");
+
+        for (int i = 0; i < ingredients.size(); i++) {
+            sb.append(ingredients.get(i).toString());
+            if (i < ingredients.size() -1) {
+                sb.append(", ");
+            }
+        }
+        return sb.toString();
+    }
 }
