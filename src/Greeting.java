@@ -84,3 +84,16 @@ public class Greeting {
         }
     }
 
+    private static String getIngredientQuantity(Scanner scanner) {
+        while (true) {
+            System.out.println("Enter ingredient quantity (with unit, e.g., '2dl'): ");
+            String quantity = scanner.nextLine().trim();
+            if (!quantity.isEmpty()) {
+                return quantity;
+            }
+            else {
+                System.out.println("Quantity cannot be empty. Please enter a valid quantity with unit.");
+            }
+        }
+    }
+
