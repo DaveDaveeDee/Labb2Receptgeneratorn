@@ -166,3 +166,20 @@ public class Greeting {
         }
     }
 
+    private static int getPositiveInteger(Scanner scanner, String prompt) {
+        while (true) {
+            System.out.print(prompt);
+            String input = scanner.nextLine().trim();
+            try {
+                int value = Integer.parseInt(input);
+                if (value > 0) {
+                    return value;
+                } else {
+                    System.out.println("Please enter a positive number (greater than zero).");
+                }
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a valid positive number.");
+            }
+        }
+    }
+
