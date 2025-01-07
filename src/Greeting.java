@@ -183,3 +183,16 @@ public class Greeting {
         }
     }
 
+
+    private static int getCategoryChoice(Scanner scanner) {
+        while (true) {
+            System.out.println("Choose a category: 1. Breakfast, 2. Lunch, 3. Dinner");
+            int choice = getPositiveInteger(scanner, "Your choice: ");
+            if (choice >= 1 && choice <= 3) {
+                return choice;
+            } else {
+                System.out.println("Invalid choice. Please select between 1 and 3.");
+            }
+        }
+    }
+}
