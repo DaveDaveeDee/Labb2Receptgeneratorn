@@ -3,24 +3,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
-
-/*    public static String menu() {
-
-        return """
-                
-                
-                How can we help you today?
-                
-                1) Add recipe.
-                2) View recipe.
-                3) Remove recipe.
-                4) Save recipe to file.
-                0) Close cooking book.
-                """
-                ;
-    }*/
-
-    public static void menuChoice() { // TODO String[] args
+    public static void menuChoice() {
         RecipeManager recipeManager = new RecipeManager();
         Scanner scanner = new Scanner(System.in);
 
@@ -49,27 +32,25 @@ public class Menu {
 
     private static int getMenuChoice(Scanner scanner) {
         while (true) {
-         //   System.out.println("Choose an option: 1. Add recipe, 2. View recipes, 3. Remove recipe, 4. Exit");
-
-            System.out.println("""
+            System.out.print("""
                 
                 
-                How can we help you today?
+                How can we serve you?
                 
-                1) Add recipe.
-                2) View recipe.
+                1) Add a recipe.
+                2) View recipes.
                 3) Remove recipe.
-                4) Close cooking book.
+                4) Close THE WITCHES CAULDRON.
                 
-                Enter a number between 1 and 4.
                 """);
+            System.out.print("Enter a number between 1 and 4: ");
 
 
             String input = scanner.nextLine().trim();
             try {
                 return Integer.parseInt(input);
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Enter a number between 1 and 4.");
+                System.out.print("Invalid input. Enter a number between 1 and 4: ");
             }
         }
     }
@@ -113,7 +94,7 @@ public class Menu {
 
     private static String getIngredientQuantity(Scanner scanner) {
         while (true) {
-            System.out.println("Enter quantity with unit, example '2dl'): ");
+            System.out.println("Enter quantity with unit, example '2dl': ");
             String quantity = scanner.nextLine().trim();
             if (!quantity.isEmpty()) {
                 return quantity;
