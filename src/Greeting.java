@@ -135,3 +135,16 @@ public class Greeting {
     }
 
 
+    private static void viewRecipes(RecipeManager recipeManager) {
+        List<Recipe> recipes = recipeManager.viewRecipes();
+        if (recipes.isEmpty()) {
+            System.out.println("No recipes to display.");
+        } else {
+            for (Recipe recipe : recipes) {
+                System.out.println(recipe);
+                System.out.println();
+            }
+        }
+    }
+
+
