@@ -34,3 +34,15 @@ public class Greeting {
             }
         }
     }
+
+    private static int getMenuChoice(Scanner scanner) {
+        while (true) {
+            System.out.println("Choose an option: 1. Add recipe, 2. View recipes, 3. Remove recipe, 4. Exit");
+            String input = scanner.nextLine().trim();
+            try {
+                return Integer.parseInt(input);
+            } catch (NumberFormatException e) {
+                System.out.println("Invalid input. Please enter a number between 1 and 4.");
+            }
+        }
+    }
