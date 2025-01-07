@@ -122,4 +122,16 @@ public class Greeting {
         }
     }
 
+    private static String getInstructions(Scanner scanner) {
+        while (true) {
+            System.out.print("Enter instructions: ");
+            String instructions = scanner.nextLine().trim();
+            if (!instructions.isEmpty()) {
+                return instructions;
+            } else {
+                System.out.println("Instructions cannot be empty. Please enter valid instructions.");
+            }
+        }
+    }
+
 
