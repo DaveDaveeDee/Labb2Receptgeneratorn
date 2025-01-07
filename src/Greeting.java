@@ -148,3 +148,8 @@ public class Greeting {
     }
 
 
+    private static void removeRecipe(Scanner scanner, RecipeManager recipeManager) {
+        String titleToRemove = getTitleToRemove(scanner);
+        recipeManager.removeRecipe(titleToRemove);
+    }
+
