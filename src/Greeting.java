@@ -46,3 +46,41 @@ public class Greeting {
             }
         }
     }
+
+
+    private static void addRecipe(Scanner scanner, RecipeManager recipeManager) {
+        String title = getRecipeTitle(scanner);
+
+        List<Ingredient> ingredients = new ArrayList<>();
+        int number = getPositiveInteger(scanner, "Enter number of ingredients (must be positive): ");
+
+        for (int i = 0; i < number; i++) {
+            String name = getIngredientName(scanner);
+            String quantity = getIngredientQuantity(scanner);
+            ingredients.add(new Ingredient(name, String.valueOf(quantity)));
+        }
+
+        String instructions = getInstructions(scanner);
+        int categoryChoice = getCategoryChoice(scanner);
+        Recipe newRecipe = null;
+
+        switch (categoryChoice) {
+            case 1:
+                newRecipe = new BreakfastRecipe(title, ingredients, instructions);
+                break;
+            case 2:
+                newRecipe = new LunchRecipe(title, ingredients, instructions);
+                break;
+            case 3:
+                newRecipe = new DinnerRecipe(title, ingredients, instructions);
+                break;
+            default:
+                System.out.println("Invalid choice. No category selected.");
+        }
+
+        if (newRecipe != null) {
+            recipeManager.addRecipe(newRecipe);
+            System.out.println("Recipe added.");
+        }
+    }
+
