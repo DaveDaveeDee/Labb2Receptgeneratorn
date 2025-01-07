@@ -97,3 +97,29 @@ public class Greeting {
         }
     }
 
+
+    private static String getRecipeTitle(Scanner scanner) {
+        while (true) {
+            System.out.print("Enter recipe title: ");
+            String title = scanner.nextLine().trim();
+            if (!title.isEmpty()) {
+                return title;
+            } else {
+                System.out.println("Title cannot be empty. Please enter a valid title.");
+            }
+        }
+    }
+
+    private static String getIngredientName(Scanner scanner) {
+        while (true) {
+            System.out.print("Enter ingredient name: ");
+            String name = scanner.nextLine().trim();
+            if (!name.isEmpty()) {
+                return name;
+            } else {
+                System.out.println("Ingredient name cannot be empty. Please enter a valid name.");
+            }
+        }
+    }
+
+
