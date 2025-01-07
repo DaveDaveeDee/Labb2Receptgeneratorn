@@ -1,4 +1,3 @@
-/*
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -13,4 +12,3 @@ class GreetingTest {
         assertEquals("\n\t Welcome \n \t\tto\n witches cauldron", result, "The greet method should return 'Welcome to witches cauldron'");
     }
 }
-*/

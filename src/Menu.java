@@ -39,7 +39,7 @@ public class Menu {
                     break;
                 case 4:
                     System.out.println("Exiting the program.");
-                    scanner.close();
+                    scanner.close(); // TODO behövs denna? Stängs i main...
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -49,12 +49,27 @@ public class Menu {
 
     private static int getMenuChoice(Scanner scanner) {
         while (true) {
-            System.out.println("Choose an option: 1. Add recipe, 2. View recipes, 3. Remove recipe, 4. Exit");
+         //   System.out.println("Choose an option: 1. Add recipe, 2. View recipes, 3. Remove recipe, 4. Exit");
+
+            System.out.println("""
+                
+                
+                How can we help you today?
+                
+                1) Add recipe.
+                2) View recipe.
+                3) Remove recipe.
+                4) Close cooking book.
+                
+                Enter a number between 1 and 4.
+                """);
+
+
             String input = scanner.nextLine().trim();
             try {
                 return Integer.parseInt(input);
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number between 1 and 4.");
+                System.out.println("Invalid input. Enter a number between 1 and 4.");
             }
         }
     }
@@ -64,7 +79,7 @@ public class Menu {
         String title = getRecipeTitle(scanner);
 
         List<Ingredient> ingredients = new ArrayList<>();
-        int number = getPositiveInteger(scanner, "Enter number of ingredients (must be positive): ");
+        int number = getPositiveInteger(scanner, "Enter number of ingredients (must be positive number): ");
 
         for (int i = 0; i < number; i++) {
             String name = getIngredientName(scanner);
@@ -98,13 +113,13 @@ public class Menu {
 
     private static String getIngredientQuantity(Scanner scanner) {
         while (true) {
-            System.out.println("Enter ingredient quantity (with unit, e.g., '2dl'): ");
+            System.out.println("Enter quantity with unit, example '2dl'): ");
             String quantity = scanner.nextLine().trim();
             if (!quantity.isEmpty()) {
                 return quantity;
             }
             else {
-                System.out.println("Quantity cannot be empty. Please enter a valid quantity with unit.");
+                System.out.println("Quantity cannot be empty. Enter a valid quantity with unit.");
             }
         }
     }
@@ -117,7 +132,7 @@ public class Menu {
             if (!title.isEmpty()) {
                 return title;
             } else {
-                System.out.println("Title cannot be empty. Please enter a valid title.");
+                System.out.println("Title cannot be empty! Enter a valid title.");
             }
         }
     }
@@ -129,7 +144,7 @@ public class Menu {
             if (!name.isEmpty()) {
                 return name;
             } else {
-                System.out.println("Ingredient name cannot be empty. Please enter a valid name.");
+                System.out.println("Ingredient name can't be empty. Enter a valid name.");
             }
         }
     }
@@ -141,7 +156,7 @@ public class Menu {
             if (!instructions.isEmpty()) {
                 return instructions;
             } else {
-                System.out.println("Instructions cannot be empty. Please enter valid instructions.");
+                System.out.println("Instructions cannot be empty. Enter valid instructions.");
             }
         }
     }
@@ -168,12 +183,12 @@ public class Menu {
 
     private static String getTitleToRemove(Scanner scanner) {
         while (true) {
-            System.out.print("Enter the title of the recipe to remove: ");
+            System.out.print("Enter title for the recipe you want to remove: ");
             String titleToRemove = scanner.nextLine().trim();
             if (!titleToRemove.isEmpty()) {
                 return titleToRemove;
             } else {
-                System.out.println("Title cannot be empty. Please enter a valid title.");
+                System.out.println("Title cannot be empty. Enter a valid title.");
             }
         }
     }
@@ -187,10 +202,10 @@ public class Menu {
                 if (value > 0) {
                     return value;
                 } else {
-                    System.out.println("Please enter a positive number (greater than zero).");
+                    System.out.println("Enter a positive number >0");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a valid positive number.");
+                System.out.println("Invalid input. Enter a valid positive number.");
             }
         }
     }
@@ -198,12 +213,16 @@ public class Menu {
 
     private static int getCategoryChoice(Scanner scanner) {
         while (true) {
-            System.out.println("Choose a category: 1. Breakfast, 2. Lunch, 3. Dinner");
+            System.out.println("""
+            Choose a category: 1. Breakfast, 2. Lunch, 3. Dinner
+            
+            """);
+            // System.out.println("Choose a category: 1. Breakfast, 2. Lunch, 3. Dinner");
             int choice = getPositiveInteger(scanner, "Your choice: ");
             if (choice >= 1 && choice <= 3) {
                 return choice;
             } else {
-                System.out.println("Invalid choice. Please select between 1 and 3.");
+                System.out.println("Invalid choice. Select number between 1 and 3.");
             }
         }
     }
