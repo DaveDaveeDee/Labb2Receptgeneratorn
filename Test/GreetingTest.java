@@ -12,4 +12,5 @@ class GreetingTest {
         System.out.println("Result from the greet method is: " + result); // TODO ta bort efter att den fungerar
         assertEquals("\n\t Welcome \n \t\tto\n witches cauldron", result, "The greet method should return 'Welcome to witches cauldron'");
     }
-}*/
+}
+*/

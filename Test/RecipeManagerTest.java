@@ -13,7 +13,8 @@ class RecipeManagerTest {
     void setUp() {
         recipeManager = new RecipeManager();
         // Clear the recipe list to start fresh for each test
-        recipeManager.viewRecipes().clear();
+      ///  recipeManager.viewRecipes().clear();
+        recipeManager.recipeList.clear();
     }
 
     @Test

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecipeManager {
-    private List<Recipe> recipeList;
+    public List<Recipe> recipeList;
     private final String filePath = "recipes.txt";
 
     public RecipeManager() {
@@ -62,4 +62,9 @@ public class RecipeManager {
             System.out.println("Error loading recipes: " + e.getMessage());
         }
     }
+
+    public void clearRecipes() {
+        recipeList.clear(); // This will clear the internal list
+    }
+
 }
