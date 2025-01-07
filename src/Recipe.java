@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.List;
 
 public class Recipe {
@@ -44,5 +45,25 @@ public class Recipe {
             }
         }
         return sb.toString();
+    }
+
+    public static Recipe fromString(List<String> lines) {
+        String title = lines.get(0).substring(7).trim();
+        Category category = new Category(lines.get(1).substring(9).trim());
+        String instructions = lines.get(2).substring(13).trim();
+
+        List<Ingredient> ingredients = new ArrayList<>();
+        String ingredientLine = lines.get(3);
+        String[] ingredientParts = ingredientLine.substring(12).split(",");
+
+        for (String ingredientStr : ingredientParts) {
+            String[] parts = ingredientStr.split(" ", 2);
+            if (parts.length == 2) {
+                String quantity = parts[0];
+                String name = parts[1];
+                ingredients.add(new Ingredient(quantity, name));
+            }
+        }
+        return new Recipe(title, ingredients, instructions, category);
     }
 }
