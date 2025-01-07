@@ -153,3 +153,16 @@ public class Greeting {
         recipeManager.removeRecipe(titleToRemove);
     }
 
+
+    private static String getTitleToRemove(Scanner scanner) {
+        while (true) {
+            System.out.print("Enter the title of the recipe to remove: ");
+            String titleToRemove = scanner.nextLine().trim();
+            if (!titleToRemove.isEmpty()) {
+                return titleToRemove;
+            } else {
+                System.out.println("Title cannot be empty. Please enter a valid title.");
+            }
+        }
+    }
+
