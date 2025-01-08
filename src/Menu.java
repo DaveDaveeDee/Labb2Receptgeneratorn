@@ -108,7 +108,7 @@ public class Menu {
 
     private static String getRecipeTitle(Scanner scanner) {
         while (true) {
-            System.out.print("Enter recipe title: ");
+            System.out.print("\nEnter recipe title: ");
             String title = scanner.nextLine().trim();
             if (!title.isEmpty()) {
                 return title;
@@ -120,7 +120,7 @@ public class Menu {
 
     private static String getIngredientName(Scanner scanner) {
         while (true) {
-            System.out.print("Enter ingredient name: ");
+            System.out.print("\nEnter ingredient name: ");
             String name = scanner.nextLine().trim();
             if (!name.isEmpty()) {
                 return name;
@@ -132,7 +132,7 @@ public class Menu {
 
     private static String getInstructions(Scanner scanner) {
         while (true) {
-            System.out.print("Enter instructions: ");
+            System.out.print("\nEnter instructions: ");
             String instructions = scanner.nextLine().trim();
             if (!instructions.isEmpty()) {
                 return instructions;
@@ -186,7 +186,7 @@ public class Menu {
                     System.out.println("Enter a positive number >0");
                 }
             } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Enter a valid positive number.");
+                System.out.println("Invalid input. Enter a positive number.");
             }
         }
     }
@@ -194,8 +194,13 @@ public class Menu {
 
     private static int getCategoryChoice(Scanner scanner) {
         while (true) {
-            System.out.println("""
-            Choose a category: 1. Breakfast, 2. Lunch, 3. Dinner
+            System.out.print("""
+            
+            Choose a category: 
+            
+            1. Breakfast
+            2. Lunch
+            3. Dinner
             
             """);
             // System.out.println("Choose a category: 1. Breakfast, 2. Lunch, 3. Dinner");
