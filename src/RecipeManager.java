@@ -7,7 +7,7 @@ public class RecipeManager {
     private final String filePath = "recipes.txt";
 
     public RecipeManager() {
-        this.recipeList = new ArrayList<Recipe>();
+        this.recipeList = new ArrayList<>();
         loadRecipes();
     }
 
@@ -24,9 +24,9 @@ public class RecipeManager {
         boolean removed = recipeList.removeIf(recipe -> recipe.getTitle().equalsIgnoreCase(title));
         if (removed) {
             saveRecipes();
-            System.out.println("Recipe successfully removed.");
+            System.out.println("Recipe " + title + " successfully removed.\n");
         } else {
-            System.out.println("Recipe not found.");
+            System.out.println("Recipe " + title + " not found.\n");
         }
     }
 
@@ -42,7 +42,7 @@ public class RecipeManager {
         }
     }
 
-    private void loadRecipes() { // TODO onödig?
+    private void loadRecipes() {
         try ( BufferedReader reader = new BufferedReader(new FileReader(filePath))) {
             String line;
             List<String> recipeLines = new ArrayList<>();
@@ -64,7 +64,7 @@ public class RecipeManager {
     }
 
     public void clearRecipes() {
-        recipeList.clear(); // This will clear the internal list
+        recipeList.clear(); // Used to clear list before test. This clears all recipes from program.
     }
 
 }

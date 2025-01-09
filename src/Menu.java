@@ -3,11 +3,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Menu {
+    public static final Scanner scanner = new Scanner(System.in);
+
     public static void menuChoice() {
         RecipeManager recipeManager = new RecipeManager();
-        Scanner scanner = new Scanner(System.in);
-
-
         while (true) {
             int choice = getMenuChoice(scanner);
             switch (choice) {
@@ -22,7 +21,7 @@ public class Menu {
                     break;
                 case 4:
                     System.out.println("Exiting the program.");
-                    scanner.close(); // TODO behövs denna? Stängs i main...
+                    scanner.close();
                     return;
                 default:
                     System.out.println("Invalid choice. Please try again.");
@@ -33,7 +32,7 @@ public class Menu {
     private static int getMenuChoice(Scanner scanner) {
         while (true) {
             System.out.print("""
-                
+                -------------------------------
                 
                 How can we serve you?
                 
@@ -41,6 +40,7 @@ public class Menu {
                 2) View recipes.
                 3) Remove recipe.
                 4) Close THE WITCHES CAULDRON.
+                    (Recipes auto saves!)
                 
                 """);
             System.out.print("Enter a number between 1 and 4: ");
@@ -88,7 +88,8 @@ public class Menu {
 
         if (newRecipe != null) {
             recipeManager.addRecipe(newRecipe);
-            System.out.println("Recipe added.");
+            System.out.println("Recipe added to the cook book.");
+            System.out.println("Recipe is automatically saved in file for future cooking!");
         }
     }
 
